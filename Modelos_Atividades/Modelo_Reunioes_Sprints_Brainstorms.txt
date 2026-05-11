@@ -1,0 +1,21 @@
+MODELO PARA INFORMAÇÕES DISCUTIDAS EM REUNIÕES | BRAINSTORMS | SRPINTS
+
+Data:
+Horário:
+Local:
+
+Equipe_01
+Membros:
+
+Assuntos discutidos:
+
+
+Conclusão:
+
+
+
+PRÓXIMA REUNIÃO
+Assuntos que serão discutidos:
+Data:
+Horário:
+Local:

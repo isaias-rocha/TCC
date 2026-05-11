@@ -1,0 +1,49 @@
+## **Lista de Funcionalidades (Requisitos)**
+
+
+
+* **Geolocalização em tempo real**
+
+Visualização da posição do usuário no mapa e rastreamento contínuo.
+
+
+
+* **Botão SOS**
+
+Envio de alerta imediato para contatos ou serviços de emergência.
+
+
+
+* **Mapa de risco**
+
+Exibição de áreas com diferentes níveis de risco (baixo, médio e alto), com base em dados de ocorrências.
+
+
+
+* **Chat (comunidade)**
+
+Canal para troca de informações e alertas entre usuários próximos.
+
+
+
+* **Denúncias e alertas**
+
+Registro e visualização de ocorrências reportadas pela comunidade.
+
+
+
+* **Busca de locais**
+
+Pesquisa de regiões e visualização de índices de segurança.
+
+
+
+* **Cadastro de usuário**
+
+Gerenciamento de perfil e preferências.
+
+
+
+* **Integração com dispositivos wearable (opcional)**
+
+Monitoramento adicional e acionamento rápido de alertas.
