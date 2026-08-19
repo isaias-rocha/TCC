@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp"
+    tools:context=".ui.history.HistoryActivity">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Histórico"
+        style="@style/TextAppearance.Aurora.Title"
+        android:textSize="22sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Suas últimas ocorrências e rotas."
+        style="@style/TextAppearance.Aurora.Subtitle"
+        android:textSize="14sp" />
+
+    <!-- Filter Chips -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="16dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:backgroundTint="@color/roxo_primario"
+            android:text="Todos"
+            style="@style/TextAppearance.Aurora.Body"
+            android:textColor="#FFFFFF"
+            android:textSize="12sp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:layout_marginStart="8dp"
+            android:backgroundTint="#1E293B"
+            android:text="Rotas"
+            style="@style/TextAppearance.Aurora.Body"
+            android:textColor="#94A3B8"
+            android:textSize="12sp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="36dp"
+            android:layout_marginStart="8dp"
+            android:backgroundTint="#1E293B"
+            style="@style/TextAppearance.Aurora.Body"
+            android:text="Alertas"
+            android:textColor="#94A3B8"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvHistorico"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>

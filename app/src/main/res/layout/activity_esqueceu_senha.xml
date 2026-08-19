@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:id="@+id/layoutEsqueceuSenha"
+    tools:context=".ui.auth.EsqueceuSenhaActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="24dp">
+
+        <!-- BOTÃO VOLTAR -->
+        <ImageButton
+            android:id="@+id/btn_voltar_esqueceu"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="16dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Voltar"
+            android:src="@drawable/ic_back"
+            app:tint="?android:attr/textColorPrimary"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- TÍTULO E SUBTÍTULO -->
+        <TextView
+            android:id="@+id/tv_titulo_esqueceu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Esqueceu a Senha?"
+            android:textColor="?android:attr/textColorPrimary"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_voltar_esqueceu" />
+
+        <TextView
+            android:id="@+id/tv_subtitulo_esqueceu"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="Insira o seu e-mail cadastrado abaixo para receber o código de verificação."
+            android:textColor="?android:attr/textColorSecondary"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_titulo_esqueceu" />
+
+        <!-- CAMPO DE EMAIL -->
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_email_esqueceu"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:hint="E-mail"
+            android:textColorHint="?android:attr/textColorSecondary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_subtitulo_esqueceu">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_email_esqueceu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:textColor="?android:attr/textColorPrimary" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- BOTÃO ENVIAR CÓDIGO -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_enviar_codigo"
+            android:layout_width="0dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="32dp"
+            android:backgroundTint="?attr/colorPrimary"
+            android:text="Enviar código"
+            android:textAllCaps="false"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            app:cornerRadius="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/til_email_esqueceu" />
+
+        <!-- LINK PARA LOGIN -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_enviar_codigo"
+            app:layout_constraintVertical_bias="1.0">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Lembrou da senha? "
+                android:textColor="?android:attr/textColorSecondary"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_voltar_login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Entrar"
+                android:textColor="?attr/colorPrimary"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

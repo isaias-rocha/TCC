@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Camada 1: Fundo Vermelho Arredondado -->
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="#E74C3C" />
+            <corners android:radius="20dp" />
+        </shape>
+    </item>
+
+    <!-- Camada 2: Ícone do SOS por cima (com margens para não encostar na borda) -->
+    <!--
+    <item
+        android:drawable="@drawable/ic_sos"
+        android:gravity="center"
+        android:top="6dp"
+        android:bottom="6dp"
+        android:left="12dp"
+        android:right="12dp" />
+         -->
+
+</layer-list>

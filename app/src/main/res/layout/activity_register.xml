@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".ui.auth.RegisterActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="24dp">
+
+        <!-- LOGO -->
+        <ImageView
+            android:id="@+id/iv_logoAurora"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginTop="36dp"
+            android:contentDescription="Logo Aurora"
+            android:src="@drawable/logo_aurora_horizontal"
+            app:layout_constraintBottom_toTopOf="@id/tv_titulo_cadastro"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_titulo_cadastro"
+            style="@style/TextAppearance.Aurora.Title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:text="Criar Conta"
+            android:textColor="?attr/colorPrimary"
+            android:textSize="32sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@id/tv_subtitulo_cadastro"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iv_logoAurora" />
+
+        <TextView
+            android:id="@+id/tv_subtitulo_cadastro"
+            style="@style/TextAppearance.Aurora.Subtitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="Preencha os dados abaixo"
+            android:textColor="?android:attr/textColorSecondary"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_titulo_cadastro" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_nome"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:hint="Nome Completo"
+            android:textColorHint="?android:attr/textColorSecondary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_subtitulo_cadastro">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_nome"
+                style="@style/TextAppearance.Aurora.Body"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPersonName"
+                android:textColor="?android:attr/textColorPrimary" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_email_cadastro"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="E-mail"
+            android:textColorHint="?android:attr/textColorSecondary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/til_nome">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_email_cadastro"
+                style="@style/TextAppearance.Aurora.Body"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:textColor="?android:attr/textColorPrimary" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_telefone"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="Telefone"
+            android:textColorHint="?android:attr/textColorSecondary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/til_email_cadastro">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_telefone"
+                style="@style/TextAppearance.Aurora.Body"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="phone"
+                android:textColor="?android:attr/textColorPrimary" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_senha_cadastro"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="Senha"
+            android:textColorHint="?android:attr/textColorSecondary"
+            app:endIconMode="password_toggle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/til_telefone">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_senha_cadastro"
+                style="@style/TextAppearance.Aurora.Body"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:textColor="?android:attr/textColorPrimary" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/til_confirmar_senha_cadastro"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:hint="Confirmar senha"
+            android:textColorHint="?android:attr/textColorSecondary"
+            app:endIconMode="password_toggle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/til_senha_cadastro">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/et_confirmar_senha_cadastro"
+                style="@style/TextAppearance.Aurora.Body"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:textColor="?android:attr/textColorPrimary" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_cadastrar"
+            style="@style/TextAppearance.Aurora.Body"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="32dp"
+            android:backgroundTint="?attr/colorPrimary"
+            android:text="Cadastrar"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            app:cornerRadius="8dp"
+            app:layout_constraintBottom_toTopOf="@id/tv_ir_para_login_desc"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/til_confirmar_senha_cadastro" />
+
+        <TextView
+            android:id="@+id/tv_ir_para_login_desc"
+            style="@style/TextAppearance.Aurora.Body"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Já tem uma conta?"
+            android:textColor="?android:attr/textColorSecondary"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@+id/tv_ir_para_login"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_cadastrar" />
+
+        <TextView
+            android:id="@+id/tv_ir_para_login"
+            style="@style/TextAppearance.Aurora.Body"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="Logar"
+            android:textColor="?android:attr/colorPrimary"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/tv_ir_para_login_desc"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toEndOf="@id/tv_ir_para_login_desc"
+            app:layout_constraintTop_toTopOf="@id/tv_ir_para_login_desc" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

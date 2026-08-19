@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".ui.home.HomeFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="24dp">
+
+        <!-- Saudação usuario -->
+        <TextView
+            android:id="@+id/tv_greeting"
+            style="@style/TextAppearance.Aurora.Title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Olá, Usuário!"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@id/img_profile"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_subtitle"
+            style="@style/TextAppearance.Aurora.Subtitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="Que bom te ver por aqui."
+            android:textColor="#94A3B8"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@id/img_profile"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_greeting" />
+
+        <!-- Foto de Perfil Central -->
+
+        <!-- BARRA DE PESQUISA -->
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/img_profile"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginBottom="24dp"
+            android:background="@drawable/card"
+            android:padding="4dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_profile"
+            app:layout_constraintBottom_toTopOf="@+id/search_bar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full" />
+
+        <LinearLayout
+            android:id="@+id/search_bar"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="24dp"
+            android:background="@drawable/card"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingHorizontal="16dp"
+            app:layout_constraintTop_toBottomOf="@id/tv_subtitle"
+            tools:layout_editor_absoluteX="24dp">
+
+            <EditText
+                android:id="@+id/etSearch"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@null"
+                android:hint="Pesquisar lugares, amigos..."
+                android:paddingStart="12dp"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#94A3B8"
+                android:textSize="14sp" />
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_search"
+                app:tint="#94A3B8" />
+        </LinearLayout>
+
+        <!-- CARD DO MAPA -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_map_preview"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="24dp"
+            app:cardBackgroundColor="#1E293B"
+            app:cardCornerRadius="16dp"
+            app:cardElevation="0dp"
+            app:layout_constraintTop_toBottomOf="@id/search_bar">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <!-- O Mapa ao fundo -->
+                <org.osmdroid.views.MapView
+                    android:id="@+id/map_preview"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+                <!-- Camada invisível por cima para receber o clique -->
+                <View
+                    android:id="@+id/view_map_click_overlay"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="card do mapa"
+                    android:background="?attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true" />
+            </FrameLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+        <!-- ATALHOS: Casa, Trabalho, Adicionar -->
+        <TextView
+            android:id="@+id/tv_friends_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:text="Amigos próximos"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ll_shortcuts" />
+
+
+        <!-- SEÇÃO: AMIGOS PRÓXIMOS -->
+        <TextView
+            android:id="@+id/tv_friends_see_all"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ver todos"
+            android:textColor="#6C5CE7"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@id/tv_friends_title"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/tv_friends_title" />
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:scrollbars="none"
+            app:layout_constraintTop_toBottomOf="@id/tv_friends_title">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!-- Amigo 1 -->
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="24dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+                    <com.google.android.material.imageview.ShapeableImageView
+                        android:layout_width="56dp"
+                        android:layout_height="56dp"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_profile_user"
+                        android:tint="@color/texto"
+                        app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="contato"
+                        android:textColor="#FFFFFF"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                    <!-- distância -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="321 m"
+                        android:textColor="#94A3B8"
+                        android:textSize="10sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <!-- Lista de atalhos -->
+        <LinearLayout
+            android:id="@+id/ll_shortcuts"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:baselineAligned="false"
+            android:orientation="horizontal"
+            android:weightSum="3"
+            app:layout_constraintTop_toBottomOf="@id/card_map_preview">
+
+
+            <!-- Item: Casa -->
+            <LinearLayout
+                android:id="@+id/btn_shortcut_casa"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="5dp"
+                android:layout_weight="1"
+                android:background="@drawable/card_icons"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="12dp">
+
+                <ImageView
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:padding="8dp"
+                    android:src="@drawable/ic_home"
+                    app:tint="@color/texto" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Casa"
+                    android:textColor="#FFFFFF"
+                    android:textSize="12sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Adicionar"
+                    android:textColor="#94A3B8"
+                    android:textSize="10sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

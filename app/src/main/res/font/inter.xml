@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<font-family xmlns:app="http://schemas.android.com/apk/res-auto">
+    <!-- Inter Regular  - Corpo de Texto, Descrições, Campos de Entrada (EditText), Rótulos de Inputs e Links de Ação do rodapé-->
+    <font
+        app:font="@font/inter_regular"
+        app:fontStyle="normal"
+        app:fontWeight="400" />
+</font-family>
