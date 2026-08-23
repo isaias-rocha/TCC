@@ -1,0 +1,237 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f9f5ff; /* Fundo off-white da imagem */
+  color: #111;
+  
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 15px 40px;
+  border-radius: 0 0 16px 16px;
+}
+.navbar:hover{
+    box-shadow: 2px 2px 50px rgba(0, 0, 0, 0.3);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 22px;
+  font-weight: bold;
+  color: #2b0066;
+}
+
+.nav-links a {
+  margin: 0 15px;
+  text-decoration: none;
+  color: #333;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.btn-primary {
+  background-color: #6a1bda; /* Roxo principal */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.btn- {
+  background-color: #6a1bda; /* Roxo principal */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn-primary:hover {
+  background-color: #5512b3;
+}
+
+.btn-secondary {
+  background-color: #6a1bda; /* Roxo principal */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-top: 100px;
+  margin-bottom: 150px;
+  border-radius: 8px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+.btn-secondary:hover {
+  background-color: #5512b3;
+}
+a{
+  border-radius:8px;
+  padding: 10px 20px;
+}
+/*escurece*/
+a:hover{
+ background-color: rgba(0, 0, 0, 0.1);
+}
+/* Hero Section */
+.hero {
+  background-image: url('/image/fundo2.jpg'); /* Cor de fundo bege */
+  border-radius: 24px;       /* Curvatura dos cantos arredondados */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 20px auto;          /* Centraliza o bloco na tela */
+  padding: 60px 0 0 60px;     /* Preenchimento top/left, deixa a direita sem padding */
+  overflow: hidden;           /* CORTA qualquer conteúdo/imagem que saia da borda arredondada */
+  position: relative;
+}
+
+.hero-content {
+  flex: 1;
+  max-width: 500px;
+}
+
+.hero-title {
+  font-size: 48px;
+  font-weight: 900;
+  line-height: 1.1;
+  margin-bottom: 24px;
+  color: #000;
+}
+
+.hero-subtitle {
+  font-size: 20px;
+  line-height: 1.4;
+  color: #333;
+}
+
+.hero-image {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .hero-title {
+    font-size: 32px;
+  }
+  
+  .nav-links {
+    display: none; /* Oculta links no mobile para simplificar */
+  }
+}
+/* Seção Etapa 1 */
+.step-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1100px;
+  margin: 80px auto;
+  padding: 0 20px;
+  gap: 60px;
+}
+/* Seção Etapa 2 */
+.step-section2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row-reverse;
+  margin: 80px auto;
+  padding: 0 20px;
+  gap: 60px;
+}
+
+/* Lado Esquerdo - Imagem com fundo bege arredondado */
+.step-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.image-bg-card {
+  background-image: url('/image/fundo2.jpg'); /* Cor bege de fundo da caixa */
+  border-radius: 40px;       /* Cantos bem arredondados */
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 450px;
+  width: 100%;
+}
+
+.image-bg-card img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Lado Direito - Textos */
+.step-content {
+  flex: 1;
+  max-width: 450px;
+}
+
+.step-number {
+  font-size: 18px;
+  font-weight: 700;
+  color: #555;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.step-title {
+  font-size: 40px;
+  font-weight: 900;
+  color: #111;
+  margin-bottom: 16px;
+  line-height: 1.1;
+}
+
+.step-text {
+  font-size: 17px;
+  line-height: 1.6;
+  color: #444;
+}
+
+/* Ajuste Responsivo para Celulares */
+@media (max-width: 768px) {
+  .step-section {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+}
